@@ -1,7 +1,7 @@
 from sacrebleu import BLEU
 
-paa_file_path = "generated_text/PAA.txt"
-paa_file_path = "generated_text/test/PAA/T=0.0-PAA-DB=convai2-LR=1e-06-Gated=True-FM=((pr)(cr))-TAU=ACC_AUTO-TAU_NU=persona-RES_GATED=False-SHARED_ENC=False-SHARED_CROSS_ATTN=False-ADD_PER2DEC=True-P_IND=True-R_IND=True.txt"
+paa_file_path = "generated_text/PAA-small.txt"
+
 encoder_gpt_file_path = "generated_text/encoder_gpt.txt"
 
 gpt_small_file_path = "generated_text/gpt2-small.txt"
