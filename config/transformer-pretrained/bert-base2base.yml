@@ -1,0 +1,21 @@
+transformer:at/train_self_original.txt
+  test: data/personachat/test_self_original.txt
+  valid: data/personachat/valid_self_original.txt
+  persona_query_token: "[SEP]"
+  response_max_length: 128
+  keep_history: No
+  encoder:
+    using_pretrained: bert-base-uncased
+    model_type: bert
+  decoder:
+    using_pretrained: bert-base-uncased
+    model_type: bert
+
+tokenizer:
+  vocab: bert-base-uncased
+
+training:
+  batch_size: 32
+  lr: !!float 1e-5
+  epoch: 100
+  seed: 36

@@ -1,0 +1,52 @@
+experiment:
+  name: paa_transformer_disilsmall
+
+paa_transformer:
+  encoder:
+    using_pretrained: null
+    hidden_size: 768
+    num_attention_heads: 4
+    num_hidden_layers: 4
+    max_position_embeddings: 512
+    model_type: bert
+    shared: No
+    turn_embedding: No
+    role_embedding: No
+  decoder:
+    base_model: distilgpt2
+    tau: 0.2
+    gated: Yes
+    response_gated: No
+    shared_crossattention: No
+    # The longer context, the higher tau
+    auto_tau: accurate
+    auto_tau_numerator: context # or context
+    fusion_mode: ((pr)(cr)) # or (p(cr)) or ((pc)(r))
+    gate_fc: yes
+    reinforce_persona: null # or max_pooling
+    add_persona_to_decoder: yes
+    add_context_to_decoder: no
+
+tokenizer:
+  vocab: gpt2
+
+dataset:
+  add_persona_indicator: True
+  add_role_indicator: True
+  max_length: 512
+  dataset: 'convai2'
+  train: 'data/ConvAI2/train_self_original.txt'
+  test: 'data/ConvAI2/valid_self_original.txt'
+  valid: 'data/ConvAI2/valid_self_original.txt'
+  persona_query_token: '[SEP]'
+  response_max_length: 128
+  keep_history: True
+  max_context_turns: 9
+
+training:
+  batch_size: 8
+  lr: !!float 1e-06
+  epoch: 30
+  seed: 36
+  optimizer: 'adam'
+  gradient_clip: 0.1

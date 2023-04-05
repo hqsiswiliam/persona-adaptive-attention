@@ -1,0 +1,16 @@
+experiment:
+  name: gpt2-medium
+causal_decoder:
+  decoder_type: gpt2-medium
+  preserve_weight: Yes
+
+tokenizer:
+  vocab: gpt2-medium
+
+training:
+  batch_size: 2
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1

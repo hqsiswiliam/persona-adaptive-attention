@@ -1,0 +1,16 @@
+experiment:
+  name: gpt2-large
+causal_decoder:
+  decoder_type: gpt2-large
+  preserve_weight: Yes
+
+tokenizer:
+  vocab: gpt2-large
+
+training:
+  batch_size: 2
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1

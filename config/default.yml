@@ -1,0 +1,24 @@
+dataset:
+  max_length: 512
+  dataset: convai2
+  train: data/ConvAI2/train_self_original.txt
+  test: data/ConvAI2/valid_self_original.txt
+  valid: data/ConvAI2/valid_self_original.txt
+  persona_query_token: "[SEP]"
+  response_max_length: 128
+  keep_history: Yes
+  max_context_turns: 9
+  add_persona_indicator: Yes
+  add_role_indicator: Yes
+
+tokenizer:
+  vocab: bert-base-uncased
+
+training:
+  batch_size: 32
+  lr: !!float 1e-2
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  num_workers: null
+  save_model: Yes

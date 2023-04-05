@@ -1,0 +1,45 @@
+experiment:
+  name: paa_double_heads
+
+paa_transformer:
+  encoder:
+    using_pretrained: null
+    hidden_size: 768
+    num_attention_heads: 4
+    num_hidden_layers: 4
+    max_position_embeddings: 512
+    model_type: bert
+    shared: No
+    turn_embedding: No
+    role_embedding: No
+  decoder:
+    base_model: gpt2
+    tau: 0.2
+    gated: Yes
+    response_gated: No
+    shared_crossattention: No
+    # The longer context, the higher tau
+    auto_tau: accurate
+    auto_tau_numerator: context # or context
+    fusion_mode: ((pr)(cr)) # or (p(cr)) or ((pc)(r))
+    gate_fc: yes
+    reinforce_persona: null # or max_pooling
+    add_persona_to_decoder: yes
+    double_heads: Yes
+
+tokenizer:
+  vocab: gpt2
+
+dataset:
+  add_persona_indicator: Yes
+  add_role_indicator: Yes
+
+training:
+  batch_size: 2
+  lr: !!float 1e-6
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1
+  extend_candidates: Yes
+  num_candidates: 2

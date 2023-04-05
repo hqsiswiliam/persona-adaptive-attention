@@ -1,0 +1,40 @@
+experiment:
+  name: condition_transformer
+
+paa_transformer:
+  encoder:
+    using_pretrained: null
+    hidden_size: 768
+    num_attention_heads: 4
+    num_hidden_layers: 4
+    max_position_embeddings: 512
+    model_type: bert
+    shared: No
+    turn_embedding: No
+    role_embedding: No
+  decoder:
+    base_model: gpt2
+    gated: Yes
+    response_gated: No
+    shared_crossattention: Yes
+    # The longer context, the higher tau
+    fusion_mode: condition_bias # or (p(cr)) or ((pc)(r))
+    gate_fc: no
+    reinforce_persona: null # or max_pooling
+    add_persona_to_decoder: no
+    add_context_to_decoder: no
+
+tokenizer:
+  vocab: gpt2
+
+dataset:
+  add_persona_indicator: No
+  add_role_indicator: No
+
+training:
+  batch_size: 4
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1

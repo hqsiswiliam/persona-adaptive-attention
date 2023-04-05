@@ -1,0 +1,29 @@
+experiment:
+  name: t5_large
+
+pretrained_enc_dec:
+  model_type: t5-large
+
+tokenizer:
+  vocab: gpt2
+
+dataset:
+  add_persona_indicator: True
+  add_role_indicator: True
+  max_length: 512
+  dataset: 'convai2'
+  train: 'data/ConvAI2/train_self_original.txt'
+  test: 'data/ConvAI2/valid_self_original.txt'
+  valid: 'data/ConvAI2/valid_self_original.txt'
+  persona_query_token: '[SEP]'
+  response_max_length: 128
+  keep_history: True
+  max_context_turns: 9
+
+training:
+  batch_size: 2
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: 'adam'
+  gradient_clip: 0.1

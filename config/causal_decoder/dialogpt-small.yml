@@ -1,0 +1,16 @@
+experiment:
+  name: dialogpt-small
+causal_decoder:
+  decoder_type: microsoft/DialoGPT-small
+  preserve_weight: Yes
+
+tokenizer:
+  vocab: microsoft/DialoGPT-small
+
+training:
+  batch_size: 2
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1

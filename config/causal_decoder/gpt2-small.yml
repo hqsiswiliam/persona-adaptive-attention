@@ -1,0 +1,16 @@
+experiment:
+  name: gpt2-small
+causal_decoder:
+  decoder_type: gpt2
+  preserve_weight: Yes
+
+tokenizer:
+  vocab: gpt2
+
+training:
+  batch_size: 2
+  lr: !!float 1e-5
+  epoch: 30
+  seed: 36
+  optimizer: adam
+  gradient_clip: 0.1
