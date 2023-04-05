@@ -29,9 +29,8 @@ conda activate PersonaGeneration
 ## Download Pre-trained Model weight from Huggingface
 we use `gpt2` weight from [Huggingface](https://huggingface.co/gpt2/tree/main), you can download it to `downloaded_LM` directory as:
 
-Here is an example of `gpt2` model, if you want to use large, medium, distil size, please download them to the directory accordingly.
-- downloaded_LM
-  - gpt2-pytorch_model
+`downloaded_LM/gpt2-pytorch_model.bin`
+
 
 ## Unzip training file
 Due to the github file size limit, we zip the training and testing text files under `data/convAI2` directory
