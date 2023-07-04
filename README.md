@@ -108,10 +108,5 @@ In the `fusion_mode`, we support follow modes:
 # Citing
 If you found our work or code is useful, please use the follow bibtex to cite us:
 ```
-@article{huang2022personalized,
-  title={Personalized Dialogue Generation with Persona-Adaptive Attention},
-  author={Huang, Qiushi and Zhang, Yu and Ko, Tom and Liu, Xubo and Wu, Bo and Wang, Wenwu and Tang, Lilian},
-  journal={arXiv preprint arXiv:2210.15088},
-  year={2022}
-}
+@article{Huang_Zhang_Ko_Liu_Wu_Wang_Tang_2023, title={Personalized Dialogue Generation with Persona-Adaptive Attention}, volume={37}, url={https://ojs.aaai.org/index.php/AAAI/article/view/26518}, DOI={10.1609/aaai.v37i11.26518}, abstractNote={Persona-based dialogue systems aim to generate consistent responses based on historical context and predefined persona. Unlike conventional dialogue generation, the persona-based dialogue needs to consider both dialogue context and persona, posing a challenge for coherent training. Specifically, this requires a delicate weight balance between context and persona. To achieve that, in this paper, we propose an effective framework with Persona-Adaptive Attention (PAA), which adaptively integrates the weights from the persona and context information via our designed attention. In addition, a dynamic masking mechanism is applied to the PAA to not only drop redundant information in context and persona but also serve as a regularization mechanism to avoid overfitting. Experimental results demonstrate the superiority of the proposed PAA framework compared to the strong baselines in both automatic and human evaluation. Moreover, the proposed PAA approach can perform equivalently well in a low-resource regime compared to models trained in a full-data setting, which achieve a similar result with only 20% to 30% of data compared to the larger models trained in the full-data setting. To fully exploit the effectiveness of our design, we designed several variants for handling the weighted information in different ways, showing the necessity and sufficiency of our weighting and masking designs.}, number={11}, journal={Proceedings of the AAAI Conference on Artificial Intelligence}, author={Huang, Qiushi and Zhang, Yu and Ko, Tom and Liu, Xubo and Wu, Bo and Wang, Wenwu and Tang, H}, year={2023}, month={Jun.}, pages={12916-12923} }
 ```
