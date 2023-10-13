@@ -48,7 +48,7 @@ python train.py \
 --lr=1e-6 \
 --gated=yes \
 --fusion_mode=pr-cr \
---tau=accurate \
+--auto_tau=accurate \
 --auto_tau_numerator=persona \
 --response_gated=no \
 --shared_enc=no \
@@ -64,7 +64,8 @@ python train.py \
 - `lr`: learning rate
 - `gated`: whether to use extra cross-attention mechanism, we support `yes` and `no`
 - `fusion_mode`: the way to fuse cross-attention, the deail will be demonstrated in the following section, for vanilla PAA, use `pr-cr`
-- `tau`: the `tau` value in the paper, we support manually assigned (from 0.0-1.0) or auto tau (`accurate`)
+- `tau`:  the `tau` value in the paper, we support manually assigned (from 0.0-1.0)
+- `auto_tau`: the automatically computed `tau` (`accurate`)
 - `auto_tau_numerator`: the numerator of the auto tau, we support `persona` and `context`
 - `response_gated`: whether fuse response into the weighted cross-attended result from PAA, default is no, enabling will drastically reduce the performance
 - `shared_enc`: whether to share the encoder between persona and context
